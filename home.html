@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Portfolio Website - Home Page">
+    <title>Student Portfolio - Home</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="home-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Student Portfolio</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Academic Results</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="year1.html">Year 1</a></li>
+                        <li><a href="year2.html">Year 2</a></li>
+                        <li><a href="year3.html">Year 3</a></li>
+                        <li><a href="year4.html">Year 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="page1.html" class="nav-link">Extra Page 1</a></li>
+                <li class="nav-item"><a href="page2.html" class="nav-link">Extra Page 2</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link logout">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-greeting">HELLO I AM</p>
+                        <h1 class="hero-name">MAPALO JUVENALIS KEPI</h1>
+                        <div class="hero-tags">
+                            <span class="tag">#IT Student</span>
+                            <span class="tag">#Web Developer</span>
+                            <span class="tag">#Problem Solver</span>
+                        </div>
+                        <div class="hero-description">
+                            <p>Passionate about technology and innovation. Currently pursuing my Bachelor's in Information Technology with a focus on web development, database management, and creating solutions that make a difference.</p>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="profile.html" class="btn-primary">View Profile</a>
+                            <a href="page2.html" class="btn-secondary">My Goals</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="slideshow-container">
+                        <div class="slide active">
+                            <img src="assets/slide1.jpeg" alt="Slide 1" class="profile-image">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/slide2.jpeg" alt="Slide 2" class="profile-image">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/slide3.jpeg" alt="Slide 3" class="profile-image">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/profile-pic.jpeg" alt="MAPALO JUVENALIS KEPI" class="profile-image">
+                        </div>
+                        
+                        <!-- Navigation arrows -->
+                        <button class="prev" onclick="changeSlide(-1)">❮</button>
+                        <button class="next" onclick="changeSlide(1)">❯</button>
+                        
+                        <!-- Slide indicators -->
+                        <div class="slide-dots">
+                            <span class="dot active" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Tutorial Section -->
+        <section class="video-tutorial-section">
+            <div class="container">
+                <div class="video-header">
+                    <h2>Website Navigation Tutorial</h2>
+                    <p>Watch this video to learn how to navigate and use all the features of this portfolio website</p>
+                </div>
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video 
+                            id="tutorialVideo" 
+                            class="tutorial-video" 
+                            controls 
+                            preload="metadata"
+                            poster="assets/video-poster.jpg"
+                        >
+                            <source src="assets/videos/tutorial1.mp4" type="video/mp4">
+                            <source src="assets/website-tutorial.webm" type="video/webm">
+                            <p>Your browser doesn't support HTML5 video. 
+                               <a href="assets/website-tutorial.mp4">Download the video</a> instead.
+                            </p>
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button" onclick="playVideo()">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-details">
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> How to navigate between different pages</li>
+                                <li><i class="fas fa-check"></i> Understanding the floating cards and their animations</li>
+                                <li><i class="fas fa-check"></i> Exploring academic results and year pages</li>
+                                <li><i class="fas fa-check"></i> Using the slideshow and interactive elements</li>
+                                <li><i class="fas fa-check"></i> Mobile responsiveness and touch interactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Date & Time Display Section -->
+        <section class="datetime-section">
+            <div class="container">
+                <div class="datetime-container">
+                    <div class="datetime-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="datetime-content">
+                        <h4>Current Date & Time</h4>
+                        <p id="currentDateTime">Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>I'm a passionate IT student currently in my 4th year, specializing in web development and database management. I believe in the power of technology to solve real-world problems and create meaningful solutions.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="number">3.85</span>
+                                <span class="label">GPA</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">4th</span>
+                                <span class="label">Year</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">5+</span>
+                                <span class="label">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/slide1.jpeg" alt="About Me">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, JavaScript, React</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h3>Database Design</h3>
+                        <p>MySQL, MongoDB, SQL Server</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>Responsive Design, App Development</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>Problem Solving</h3>
+                        <p>Analytical thinking, Creative solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio-section">
+            <div class="container">
+                <h2>My Work</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="assets/hobby3.jpeg" alt="Project 1">
+                        <div class="portfolio-overlay">
+                            <h3>Web Development</h3>
+                            <p>Full-stack web application</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/ph.jpeg" alt="Project 2">
+                        <div class="portfolio-overlay">
+                            <h3>Mobile App</h3>
+                            <p>Responsive mobile design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/Databases.jpeg" alt="Project 3">
+                        <div class="portfolio-overlay">
+                            <h3>Database System</h3>
+                            <p>Efficient data management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Get In Touch</h2>
+                    <p>Let's work together on your next project</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Kepijuvenalis@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+260 973512005</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zambia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
